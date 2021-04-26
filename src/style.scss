@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap');
+
+$karla: 'Karla', sans-serif;
+$dark-blue: rgb(20, 82, 175);
+$med-blue: rgb(49, 134, 204);
+$light-blue: rgb(132, 203, 250);
+
+$clear-sky: $dark-blue, $med-blue, $light-blue;
+
+@mixin gradient($direction, $list) { 
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);  
+}
+
+html, body {
+  margin: 0px;
+  height: 100%;
+}
+
+#main-container {
+  @include gradient(top, $clear-sky);
+  box-sizing: border-box;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  grid-template-rows: 1fr 2fr 1fr;
+}
+
+#weather-container {
+  grid-column: 2/4;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 4fr 1fr;
+  font-family: $karla;
+  font-size: 1.8rem;
+}
+
+#left-container {
+  grid-row: 2/3;
+}
+
+#right-container {
+  grid-row: 1/4;
+  display: grid;
+  justify-items: end;
+}
+
+#name {
+  font-size: 4rem;
+}
+
+#desc, #feels-like {
+  font-size: 2.5rem;
+}
+
+#temp {
+  font-size: 7rem;
+}
+
+#humidity, #wind-speed, #chance-of-rain, #sunrise {
+  margin-bottom: 1rem;
+}
+
+#form-container {
+  grid-row: 3/4;
+  grid-column: 2/4;
+}
+
+#form-input {
+  width: 16rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-family: $karla;
+  background: transparent;
+  background: rgba($color: white, $alpha: 0.5);
+  border: solid white 1px;
+}
+
+#submit-btn {
+  margin-left: 1rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: solid white 1px;
+  font-family: $karla;
+}
+
+#form-input:focus, #submit-btn:focus {
+  outline: none;
+}
+
+#submit-btn:hover {
+  background: rgb(44, 44, 44);
+  color: white;
+}
