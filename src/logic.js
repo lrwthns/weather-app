@@ -56,8 +56,12 @@ function getWeather(city, isUnitMetric, container, callback, alertCallback = '')
       const newObj = objFactory(result, isUnitMetric);
       callback(container, newObj);
     })
-    .catch(() => {
-      alertCallback(true);
+    .catch((error) => {
+      if (alertCallback !== '') {
+        alertCallback(true);
+      } else {
+        console.log(error);
+      }
     });
 }
 
