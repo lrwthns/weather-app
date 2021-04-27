@@ -47,11 +47,13 @@ function getWeather(city, callback, container) {
       console.log(result);
       console.log(newObj);
       callback(container, newObj);
+    })
+    .catch(() => {
+      document.querySelector('#alert').style.display = 'block';
     });
 }
 
 export {
-  // userModule,
   objFactory,
   getWeather,
 };

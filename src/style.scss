@@ -67,6 +67,7 @@ html, body {
 #form-container {
   grid-row: 3/4;
   grid-column: 2/4;
+  font-family: $karla;
 }
 
 #form-input {
@@ -94,4 +95,10 @@ html, body {
 #submit-btn:hover {
   background: rgb(44, 44, 44);
   color: white;
+}
+
+#alert {
+  display: none;
+  margin-top: 1rem;
+  font-size: 1.3rem;
 }

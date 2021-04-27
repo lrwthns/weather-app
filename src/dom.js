@@ -32,6 +32,16 @@ function createFormElem(container, weatherElemContainer) {
   const formLabel = createNewElement(formContainer, 'label', '', 'form-label');
   const formInput = createNewElement(formContainer, 'input', '', 'form-input');
   const submitBtn = createNewElement(formContainer, 'button', '', 'submit-btn', 'Submit');
+  const alert = createNewElement(formContainer, 'div', '', 'alert', 'Please enter a valid name.');
+  const regex = '^[a-zA-Z ]*$';
+  formInput.setAttribute('pattern', regex);
+  formInput.addEventListener('input', () => {
+    if (formInput.validity.patternMismatch) {
+      formInput.setCustomValidity('Entered value should only be letters or spaces.');
+    } else {
+      formInput.setCustomValidity('');
+    }
+  });
   formContainer.addEventListener('submit', (e) => {
     e.preventDefault();
     getWeather(formInput.value, createWeatherElem, weatherElemContainer);
