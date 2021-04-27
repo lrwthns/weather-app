@@ -54,8 +54,6 @@ function getWeather(city, isUnitMetric, container, callback, alertCallback = '')
     .then((response) => response.json())
     .then((result) => {
       const newObj = objFactory(result, isUnitMetric);
-      console.log(result);
-      console.log(newObj);
       callback(container, newObj);
     })
     .catch(() => {

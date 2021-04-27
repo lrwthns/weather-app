@@ -3,9 +3,25 @@
 $karla: 'Karla', sans-serif;
 $dark-blue: rgb(20, 82, 175);
 $med-blue: rgb(49, 134, 204);
-$light-blue: rgb(132, 203, 250);
+$light-blue: rgb(180, 225, 255);
+$very-light-blue: rgb(236, 248, 255);
+$blue-gray: rgb(89, 136, 175);
+$very-dark-gray: rgb(34, 34, 34);
+$dark-gray: rgb(85, 85, 85);
+$light-gray: rgb(139, 139, 139);
+$sand: rgb(121, 93, 87);
+$dark-sand: rgb(63, 51, 48);
+$dark-purple: rgb(31, 22, 43);
+$purple-gray: rgb(70, 63, 82);
+$dark-green: rgb(47, 45, 58);
+$med-green: rgb(70, 77, 70);
 
-$clear-sky: $dark-blue, $med-blue, $light-blue;
+$clear: $dark-blue, $med-blue, $light-blue;
+$clouds: $blue-gray, $dark-gray;
+$snow: $light-blue, $very-light-blue, white;
+$atmos: $sand, $dark-sand;
+$thunderstorm: $dark-purple, $purple-gray;
+$rain: $dark-green, $med-green;
 
 @mixin gradient($direction, $list) { 
   background: -webkit-linear-gradient($direction, $list);
@@ -19,13 +35,54 @@ html, body {
   height: 100%;
 }
 
-#main-container {
-  @include gradient(top, $clear-sky);
+%main-container {
   box-sizing: border-box;
   height: 100%;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 2fr;
   grid-template-rows: 1fr 2fr 1fr;
+}
+
+.main-container-default {
+  @extend %main-container;
+  background: rgb(204, 204, 204);
+  color: rgb(43, 43, 43);
+}
+
+.main-container-clear {
+  @extend %main-container;
+  @include gradient(top, $clear);
+  color: white;
+}
+
+.main-container-cloudy {
+  @extend %main-container;
+  @include gradient(top, $clouds);
+  color: rgb(212, 212, 212);
+}
+
+.main-container-snowy {
+  @extend %main-container;
+  @include gradient(top, $snow);
+  color: rgb(70, 116, 143);
+}
+
+.main-container-atmos {
+  @extend %main-container;
+  @include gradient(top, $atmos);
+  color: rgb(199, 199, 199);
+}
+
+.main-container-rain {
+  @extend %main-container;
+  @include gradient(top, $rain);
+  color: rgb(182, 182, 182);
+}
+
+.main-container-thunderstorm {
+  @extend %main-container;
+  @include gradient(top, $thunderstorm);
+  color: rgb(255, 254, 196);
 }
 
 #weather-container {

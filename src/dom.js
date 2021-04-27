@@ -9,6 +9,41 @@ function cleanContainer(container) {
 
 function createWeatherElem(container, obj) {
   cleanContainer(container);
+  const mainContainer = document.querySelector('#main-container');
+  function switchContainerId() {
+    switch (obj.weatherCategory) {
+      case 'Clear':
+        mainContainer.className = 'main-container-clear';
+        break;
+      case 'Clouds':
+        mainContainer.className = 'main-container-cloudy';
+        break;
+      case 'Snow':
+        mainContainer.className = 'main-container-snowy';
+        break;
+      case 'Mist':
+      case 'Smoke':
+      case 'Haze':
+      case 'Dust':
+      case 'Fog':
+      case 'Sand':
+      case 'Ash':
+      case 'Squall':
+      case 'Tornado':
+        mainContainer.className = 'main-container-atmos';
+        break;
+      case 'Thunderstorm':
+        mainContainer.className = 'main-container-thunderstorm';
+        break;
+      case 'Drizzle':
+      case 'Rain':
+        mainContainer.className = 'main-container-rain';
+        break;
+      default:
+        mainContainer.className = 'main-container-default';
+    }
+  }
+  switchContainerId();
   const leftContainer = createNewElement(container, 'div', '', 'left-container');
   const rightContainer = createNewElement(container, 'div', '', 'right-container');
   const nameElem = createNewElement(leftContainer, 'div', '', 'name', obj.name);
@@ -82,7 +117,7 @@ function createFormElem(container, weatherElemContainer) {
 
 export default function createDOM() {
   const body = document.querySelector('body');
-  const mainContainer = createNewElement(body, 'div', '', 'main-container');
+  const mainContainer = createNewElement(body, 'div', 'main-container-default', 'main-container');
   const weatherContainer = createNewElement(mainContainer, 'div', '', 'weather-container');
   createFormElem(mainContainer, weatherContainer);
   getWeather('Bandung', User.isUnitMetric, weatherContainer, createWeatherElem);
