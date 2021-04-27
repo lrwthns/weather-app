@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html, body {\n  margin: 0px;\n  height: 100%; }\n\n#main-container {\n  background: -webkit-linear-gradient(top, #1452af, #3186cc, #84cbfa);\n  background: -moz-linear-gradient(top, #1452af, #3186cc, #84cbfa);\n  background: -o-linear-gradient(top, #1452af, #3186cc, #84cbfa);\n  background: linear-gradient(top, #1452af, #3186cc, #84cbfa);\n  box-sizing: border-box;\n  height: 100%;\n  display: grid;\n  grid-template-columns: 2fr 1fr 1fr 2fr;\n  grid-template-rows: 1fr 2fr 1fr; }\n\n#weather-container {\n  grid-column: 2/4;\n  grid-row: 2/3;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-template-rows: 1fr 4fr 1fr;\n  font-family: \"Karla\", sans-serif;\n  font-size: 1.8rem; }\n\n#left-container {\n  grid-row: 2/3; }\n\n#right-container {\n  grid-row: 1/4;\n  display: grid;\n  justify-items: end; }\n\n#name {\n  font-size: 4rem; }\n\n#desc, #feels-like {\n  font-size: 2.5rem; }\n\n#temp {\n  font-size: 7rem; }\n\n#humidity, #wind-speed, #chance-of-rain, #sunrise {\n  margin-bottom: 1rem; }\n\n#form-container {\n  grid-row: 3/4;\n  grid-column: 2/4;\n  font-family: \"Karla\", sans-serif; }\n\n#form-input {\n  width: 16rem;\n  height: 2rem;\n  font-size: 1rem;\n  font-family: \"Karla\", sans-serif;\n  background: transparent;\n  background: rgba(255, 255, 255, 0.5);\n  border: solid white 1px; }\n\n#submit-btn {\n  margin-left: 1rem;\n  font-size: 1rem;\n  padding: 0.5rem;\n  border: solid white 1px;\n  font-family: \"Karla\", sans-serif; }\n\n#form-input:focus, #submit-btn:focus {\n  outline: none; }\n\n#submit-btn:hover {\n  background: #2c2c2c;\n  color: white; }\n\n#alert {\n  display: none;\n  margin-top: 1rem;\n  font-size: 1.3rem; }\n", "",{"version":3,"sources":["webpack://./src/style.scss"],"names":[],"mappings":"AAgBA;EACE,WAAW;EACX,YAAY,EAAA;;AAGd;EAXE,mEAAsD;EACtD,gEAAmD;EACnD,8DAAiD;EACjD,2DAA8C;EAU9C,sBAAsB;EACtB,YAAY;EACZ,aAAa;EACb,sCAAsC;EACtC,+BAA+B,EAAA;;AAGjC;EACE,gBAAgB;EAChB,aAAa;EACb,aAAa;EACb,8BAA8B;EAC9B,+BAA+B;EAC/B,gCAlCyB;EAmCzB,iBAAiB,EAAA;;AAGnB;EACE,aAAa,EAAA;;AAGf;EACE,aAAa;EACb,aAAa;EACb,kBAAkB,EAAA;;AAGpB;EACE,eAAe,EAAA;;AAGjB;EACE,iBAAiB,EAAA;;AAGnB;EACE,eAAe,EAAA;;AAGjB;EACE,mBAAmB,EAAA;;AAGrB;EACE,aAAa;EACb,gBAAgB;EAChB,gCAnEyB,EAAA;;AAsE3B;EACE,YAAY;EACZ,YAAY;EACZ,eAAe;EACf,gCA1EyB;EA2EzB,uBAAuB;EACvB,oCAA8B;EAC9B,uBAAuB,EAAA;;AAGzB;EACE,iBAAiB;EACjB,eAAe;EACf,eAAe;EACf,uBAAuB;EACvB,gCArFyB,EAAA;;AAwF3B;EACE,aAAa,EAAA;;AAGf;EACE,mBAA2B;EAC3B,YAAY,EAAA;;AAGd;EACE,aAAa;EACb,gBAAgB;EAChB,iBAAiB,EAAA","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap');\n\n$karla: 'Karla', sans-serif;\n$dark-blue: rgb(20, 82, 175);\n$med-blue: rgb(49, 134, 204);\n$light-blue: rgb(132, 203, 250);\n\n$clear-sky: $dark-blue, $med-blue, $light-blue;\n\n@mixin gradient($direction, $list) { \n  background: -webkit-linear-gradient($direction, $list);\n  background: -moz-linear-gradient($direction, $list);\n  background: -o-linear-gradient($direction, $list);\n  background: linear-gradient($direction, $list);  \n}\n\nhtml, body {\n  margin: 0px;\n  height: 100%;\n}\n\n#main-container {\n  @include gradient(top, $clear-sky);\n  box-sizing: border-box;\n  height: 100%;\n  display: grid;\n  grid-template-columns: 2fr 1fr 1fr 2fr;\n  grid-template-rows: 1fr 2fr 1fr;\n}\n\n#weather-container {\n  grid-column: 2/4;\n  grid-row: 2/3;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-template-rows: 1fr 4fr 1fr;\n  font-family: $karla;\n  font-size: 1.8rem;\n}\n\n#left-container {\n  grid-row: 2/3;\n}\n\n#right-container {\n  grid-row: 1/4;\n  display: grid;\n  justify-items: end;\n}\n\n#name {\n  font-size: 4rem;\n}\n\n#desc, #feels-like {\n  font-size: 2.5rem;\n}\n\n#temp {\n  font-size: 7rem;\n}\n\n#humidity, #wind-speed, #chance-of-rain, #sunrise {\n  margin-bottom: 1rem;\n}\n\n#form-container {\n  grid-row: 3/4;\n  grid-column: 2/4;\n  font-family: $karla;\n}\n\n#form-input {\n  width: 16rem;\n  height: 2rem;\n  font-size: 1rem;\n  font-family: $karla;\n  background: transparent;\n  background: rgba($color: white, $alpha: 0.5);\n  border: solid white 1px;\n}\n\n#submit-btn {\n  margin-left: 1rem;\n  font-size: 1rem;\n  padding: 0.5rem;\n  border: solid white 1px;\n  font-family: $karla;\n}\n\n#form-input:focus, #submit-btn:focus {\n  outline: none;\n}\n\n#submit-btn:hover {\n  background: rgb(44, 44, 44);\n  color: white;\n}\n\n#alert {\n  display: none;\n  margin-top: 1rem;\n  font-size: 1.3rem;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html, body {\n  margin: 0px;\n  height: 100%; }\n\n#main-container {\n  background: -webkit-linear-gradient(top, #1452af, #3186cc, #84cbfa);\n  background: -moz-linear-gradient(top, #1452af, #3186cc, #84cbfa);\n  background: -o-linear-gradient(top, #1452af, #3186cc, #84cbfa);\n  background: linear-gradient(top, #1452af, #3186cc, #84cbfa);\n  box-sizing: border-box;\n  height: 100%;\n  display: grid;\n  grid-template-columns: 2fr 1fr 1fr 2fr;\n  grid-template-rows: 1fr 2fr 1fr; }\n\n#weather-container {\n  grid-column: 2/4;\n  grid-row: 2/3;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-template-rows: 1fr 7fr 1fr;\n  font-family: \"Karla\", sans-serif;\n  font-size: 1.8rem; }\n\n#left-container {\n  grid-row: 2/3; }\n\n#right-container {\n  grid-row: 1/4;\n  display: grid;\n  justify-items: end; }\n\n#name {\n  font-size: 4rem; }\n\n#desc, #feels-like {\n  font-size: 2.5rem; }\n\n#temp {\n  font-size: 8rem; }\n\n#unit {\n  margin-top: 3rem;\n  font-size: 2rem; }\n\n#unit:hover {\n  color: white; }\n\n#humidity, #wind-speed, #chance-of-rain, #sunrise {\n  margin-bottom: 1rem; }\n\n#form-container {\n  grid-row: 3/4;\n  grid-column: 2/4;\n  font-family: \"Karla\", sans-serif; }\n\n#form-input {\n  width: 16rem;\n  height: 2rem;\n  font-size: 1rem;\n  font-family: \"Karla\", sans-serif;\n  background: rgba(255, 255, 255, 0.5);\n  border: solid white 1px; }\n\n#submit-btn {\n  margin-left: 1rem;\n  font-size: 1rem;\n  padding: 0.5rem;\n  border: solid white 1px;\n  font-family: \"Karla\", sans-serif; }\n\n#form-input:focus, #submit-btn:focus {\n  outline: none; }\n\n#submit-btn:hover {\n  background: #2c2c2c;\n  color: white; }\n\n#alert-none {\n  display: none;\n  margin-top: 1rem;\n  font-size: 1.3rem; }\n\n#alert-block {\n  display: block;\n  margin-top: 1rem;\n  font-size: 1.3rem; }\n", "",{"version":3,"sources":["webpack://./src/style.scss"],"names":[],"mappings":"AAgBA;EACE,WAAW;EACX,YAAY,EAAA;;AAGd;EAXE,mEAAsD;EACtD,gEAAmD;EACnD,8DAAiD;EACjD,2DAA8C;EAU9C,sBAAsB;EACtB,YAAY;EACZ,aAAa;EACb,sCAAsC;EACtC,+BAA+B,EAAA;;AAGjC;EACE,gBAAgB;EAChB,aAAa;EACb,aAAa;EACb,8BAA8B;EAC9B,+BAA+B;EAC/B,gCAlCyB;EAmCzB,iBAAiB,EAAA;;AAGnB;EACE,aAAa,EAAA;;AAGf;EACE,aAAa;EACb,aAAa;EACb,kBAAkB,EAAA;;AAGpB;EACE,eAAe,EAAA;;AAGjB;EACE,iBAAiB,EAAA;;AAGnB;EACE,eAAe,EAAA;;AAGjB;EACE,gBAAgB;EAChB,eAAe,EAAA;;AAGjB;EACE,YAAY,EAAA;;AAGd;EACE,mBAAmB,EAAA;;AAGrB;EACE,aAAa;EACb,gBAAgB;EAChB,gCA5EyB,EAAA;;AA+E3B;EACE,YAAY;EACZ,YAAY;EACZ,eAAe;EACf,gCAnFyB;EAoFzB,oCAA8B;EAC9B,uBAAuB,EAAA;;AAGzB;EACE,iBAAiB;EACjB,eAAe;EACf,eAAe;EACf,uBAAuB;EACvB,gCA7FyB,EAAA;;AAgG3B;EACE,aAAa,EAAA;;AAGf;EACE,mBAA2B;EAC3B,YAAY,EAAA;;AAGd;EACE,aAAa;EACb,gBAAgB;EAChB,iBAAiB,EAAA;;AAGnB;EACE,cAAc;EACd,gBAAgB;EAChB,iBAAiB,EAAA","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap');\n\n$karla: 'Karla', sans-serif;\n$dark-blue: rgb(20, 82, 175);\n$med-blue: rgb(49, 134, 204);\n$light-blue: rgb(132, 203, 250);\n\n$clear-sky: $dark-blue, $med-blue, $light-blue;\n\n@mixin gradient($direction, $list) { \n  background: -webkit-linear-gradient($direction, $list);\n  background: -moz-linear-gradient($direction, $list);\n  background: -o-linear-gradient($direction, $list);\n  background: linear-gradient($direction, $list);  \n}\n\nhtml, body {\n  margin: 0px;\n  height: 100%;\n}\n\n#main-container {\n  @include gradient(top, $clear-sky);\n  box-sizing: border-box;\n  height: 100%;\n  display: grid;\n  grid-template-columns: 2fr 1fr 1fr 2fr;\n  grid-template-rows: 1fr 2fr 1fr;\n}\n\n#weather-container {\n  grid-column: 2/4;\n  grid-row: 2/3;\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-template-rows: 1fr 7fr 1fr;\n  font-family: $karla;\n  font-size: 1.8rem;\n}\n\n#left-container {\n  grid-row: 2/3;\n}\n\n#right-container {\n  grid-row: 1/4;\n  display: grid;\n  justify-items: end;\n}\n\n#name {\n  font-size: 4rem;\n}\n\n#desc, #feels-like {\n  font-size: 2.5rem;\n}\n\n#temp {\n  font-size: 8rem;\n}\n\n#unit {\n  margin-top: 3rem;\n  font-size: 2rem;\n}\n\n#unit:hover {\n  color: white;\n}\n\n#humidity, #wind-speed, #chance-of-rain, #sunrise {\n  margin-bottom: 1rem;\n}\n\n#form-container {\n  grid-row: 3/4;\n  grid-column: 2/4;\n  font-family: $karla;\n}\n\n#form-input {\n  width: 16rem;\n  height: 2rem;\n  font-size: 1rem;\n  font-family: $karla;\n  background: rgba($color: white, $alpha: 0.5);\n  border: solid white 1px;\n}\n\n#submit-btn {\n  margin-left: 1rem;\n  font-size: 1rem;\n  padding: 0.5rem;\n  border: solid white 1px;\n  font-family: $karla;\n}\n\n#form-input:focus, #submit-btn:focus {\n  outline: none;\n}\n\n#submit-btn:hover {\n  background: rgb(44, 44, 44);\n  color: white;\n}\n\n#alert-none {\n  display: none;\n  margin-top: 1rem;\n  font-size: 1.3rem;\n}\n\n#alert-block {\n  display: block;\n  margin-top: 1rem;\n  font-size: 1.3rem;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6214,11 +6214,12 @@ function cleanContainer(container) {
 function createWeatherElem(container, obj) {
   cleanContainer(container);
   const leftContainer = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(container, 'div', '', 'left-container');
-  const rightContainer = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(container, 'div', '', 'right-container')
+  const rightContainer = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(container, 'div', '', 'right-container');
   const nameElem = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(leftContainer, 'div', '', 'name', obj.name);
   const descElem = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(leftContainer, 'div', '', 'desc', obj.weatherDesc);
   const tempElem = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(leftContainer, 'div', '', 'temp', obj.temp);
   const feelsLikeElem = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(leftContainer, 'div', '', 'feels-like', `feels like ${obj.feelsLike}`);
+  const unitElem = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(leftContainer, 'div', '', 'unit');
   const humidityLabel = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(rightContainer, 'div', '', 'humidity-label', 'humidity');
   const humidityElem = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(rightContainer, 'div', '', 'humidity', obj.humidity);
   const windSpeedLabel = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(rightContainer, 'div', '', 'wind-speed-label', 'wind speed');
@@ -6229,6 +6230,23 @@ function createWeatherElem(container, obj) {
   const sunriseElem = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(rightContainer, 'div', '', 'sunrise', obj.sunrise);
   const sunsetLabel = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(rightContainer, 'div', '', 'sunset-label', 'sunset');
   const sunsetElem = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(rightContainer, 'div', '', 'sunrset', obj.sunset);
+  function changeUnitDisplay() {
+    if (_logic__WEBPACK_IMPORTED_MODULE_1__.userModule.isUnitMetric === false) {
+      unitElem.textContent = 'display in °C';
+    } else {
+      unitElem.textContent = 'display in °F';
+    }
+  }
+  changeUnitDisplay();
+  unitElem.addEventListener('click', () => {
+    if (_logic__WEBPACK_IMPORTED_MODULE_1__.userModule.isUnitMetric === false) {
+      _logic__WEBPACK_IMPORTED_MODULE_1__.userModule.isUnitMetric = true;
+    } else {
+      _logic__WEBPACK_IMPORTED_MODULE_1__.userModule.isUnitMetric = false;
+    }
+    changeUnitDisplay();
+    (0,_logic__WEBPACK_IMPORTED_MODULE_1__.getWeather)(obj.name, _logic__WEBPACK_IMPORTED_MODULE_1__.userModule.isUnitMetric, container, createWeatherElem);
+  });
 }
 
 function createFormElem(container, weatherElemContainer) {
@@ -6236,8 +6254,15 @@ function createFormElem(container, weatherElemContainer) {
   const formLabel = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(formContainer, 'label', '', 'form-label');
   const formInput = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(formContainer, 'input', '', 'form-input');
   const submitBtn = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(formContainer, 'button', '', 'submit-btn', 'Submit');
-  const alert = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(formContainer, 'div', '', 'alert', 'Please enter a valid name.');
+  const alert = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(formContainer, 'div', '', 'alert-none', 'Please enter a valid name.');
   const regex = '^[a-zA-Z ]*$';
+  function showAlert(bool) {
+    if (bool === true) {
+      alert.setAttribute('id', 'alert-block');
+    } else {
+      alert.setAttribute('id', 'alert-none');
+    }
+  }
   formInput.setAttribute('pattern', regex);
   formInput.addEventListener('input', () => {
     if (formInput.validity.patternMismatch) {
@@ -6248,7 +6273,14 @@ function createFormElem(container, weatherElemContainer) {
   });
   formContainer.addEventListener('submit', (e) => {
     e.preventDefault();
-    (0,_logic__WEBPACK_IMPORTED_MODULE_1__.getWeather)(formInput.value, createWeatherElem, weatherElemContainer);
+    showAlert(false);
+    (0,_logic__WEBPACK_IMPORTED_MODULE_1__.getWeather)(
+      formInput.value,
+      _logic__WEBPACK_IMPORTED_MODULE_1__.userModule.isUnitMetric,
+      weatherElemContainer,
+      createWeatherElem,
+      showAlert,
+    );
   });
 }
 
@@ -6257,7 +6289,7 @@ function createDOM() {
   const mainContainer = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(body, 'div', '', 'main-container');
   const weatherContainer = (0,_dom_manipulation_helper__WEBPACK_IMPORTED_MODULE_0__.default)(mainContainer, 'div', '', 'weather-container');
   createFormElem(mainContainer, weatherContainer);
-  (0,_logic__WEBPACK_IMPORTED_MODULE_1__.getWeather)('Palembang', createWeatherElem, weatherContainer);
+  (0,_logic__WEBPACK_IMPORTED_MODULE_1__.getWeather)('Bandung', _logic__WEBPACK_IMPORTED_MODULE_1__.userModule.isUnitMetric, weatherContainer, createWeatherElem);
 }
 
 
@@ -6272,35 +6304,41 @@ function createDOM() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "objFactory": () => (/* binding */ objFactory),
+/* harmony export */   "userModule": () => (/* binding */ userModule),
 /* harmony export */   "getWeather": () => (/* binding */ getWeather)
 /* harmony export */ });
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
 
 
-// const userModule = (() => {
-//   const weatherObj = {};
-//   return {
-//     weatherObj,
-//   };
-// })();
+const userModule = (() => {
+  const isUnitMetric = true;
+  return {
+    isUnitMetric,
+  };
+})();
 
-function objFactory(obj) {
+function objFactory(obj, units) {
   const { id } = obj;
   const weatherCategory = obj.weather[0].main;
   const { name } = obj;
   const weatherDesc = obj.weather[0].description;
-  const temp = `${obj.main.temp}°`;
-  const feelsLike = `${obj.main.feels_like}°`;
-  const humidity = `${obj.main.humidity} %`;
+  let temp = `${Math.round(obj.main.temp)}°C`;
+  let feelsLike = `${Math.round(obj.main.feels_like)}°C`;
   const windSpeedNum = (obj.wind.speed * 18) / 5;
-  const windSpeed = `${windSpeedNum.toFixed(1)} km/h`;
+  let windSpeed = `${windSpeedNum.toFixed(1)} km/h`;
+  const humidity = `${obj.main.humidity} %`;
   const chanceOfRain = `${obj.clouds.all} %`;
   const sunriseTime = new Date(obj.sys.sunrise * 1000);
   const sunrise = moment__WEBPACK_IMPORTED_MODULE_0___default()(sunriseTime).format('hh:mm a');
   const sunsetTime = new Date(obj.sys.sunset * 1000);
   const sunset = moment__WEBPACK_IMPORTED_MODULE_0___default()(sunsetTime).format('hh:mm a');
+
+  if (units === false) {
+    temp = `${Math.round(obj.main.temp)}°F`;
+    feelsLike = `${Math.round(obj.main.feels_like)}°F`;
+    windSpeed = `${obj.wind.speed} mph`;
+  }
 
   return {
     id,
@@ -6317,18 +6355,22 @@ function objFactory(obj) {
   };
 }
 
-function getWeather(city, callback, container) {
-  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=736e359c524cb08a4b1e7c7d0a31ecd0`;
+function getWeather(city, isUnitMetric, container, callback, alertCallback = '') {
+  let unit = 'metric';
+  if (isUnitMetric === false) {
+    unit = 'imperial';
+  }
+  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=736e359c524cb08a4b1e7c7d0a31ecd0`;
   fetch(url, { mode: 'cors' })
     .then((response) => response.json())
     .then((result) => {
-      const newObj = objFactory(result);
+      const newObj = objFactory(result, isUnitMetric);
       console.log(result);
       console.log(newObj);
       callback(container, newObj);
     })
     .catch(() => {
-      document.querySelector('#alert').style.display = 'block';
+      alertCallback(true);
     });
 }
 

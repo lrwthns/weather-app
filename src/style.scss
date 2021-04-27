@@ -33,7 +33,7 @@ html, body {
   grid-row: 2/3;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-rows: 1fr 7fr 1fr;
   font-family: $karla;
   font-size: 1.8rem;
 }
@@ -57,7 +57,16 @@ html, body {
 }
 
 #temp {
-  font-size: 7rem;
+  font-size: 8rem;
+}
+
+#unit {
+  margin-top: 3rem;
+  font-size: 2rem;
+}
+
+#unit:hover {
+  color: white;
 }
 
 #humidity, #wind-speed, #chance-of-rain, #sunrise {
@@ -75,7 +84,6 @@ html, body {
   height: 2rem;
   font-size: 1rem;
   font-family: $karla;
-  background: transparent;
   background: rgba($color: white, $alpha: 0.5);
   border: solid white 1px;
 }
@@ -97,8 +105,14 @@ html, body {
   color: white;
 }
 
-#alert {
+#alert-none {
   display: none;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+#alert-block {
+  display: block;
   margin-top: 1rem;
   font-size: 1.3rem;
 }
